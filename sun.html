@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/scripts.js"></script>
+</head>
+<body>
+    <div>
+        <img id="sunImage" src="sun.png" alt="SUUUNNNN">
+        <p id="clickText">Click ME</p>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            function animateSun() {
+                $("#sunImage").animate({
+                    width: "50%",
+                    height: "50%"
+                }, 1000).animate({
+                    width: "30%",
+                    height: "30%"
+                }, 1000, animateSun);
+            }
+
+            animateSun();
+
+            $("#sunImage").on("click", function() {
+                $(this).attr("src", "cat.gif");
+                $("#clickText").text("HAPPY HAPPY");
+            });
+            
+        });
+    </script>
+</body>
+</html>
